@@ -1,0 +1,19 @@
+<div class="w-100 h-auto p-5">
+    <div class="d-flex justify-content-around align-items-center flex-wrap gap-4">
+        @for (item of routes; track $index) {
+            <div class="card">
+                <div class="img">
+                    <div class="save d-flex justify-content-center align-items-center">
+                        <i class="{{ item.data?.['icon'] }} text-white"></i>
+                    </div>
+                </div>
+                <div class="text d-flex flex-column">
+                    <p class="text-center font-frenia fs-3">{{ item.data?.['label'] }}</p>
+                    <button class="span border-0 rounded-3 shadow-sm mb-2"  [routerLink]="'/admin/gestion-patrocinador/'+item.path">
+                        <i class="bi bi-arrow-right-short text-white"></i>
+                    </button>
+                </div>
+            </div>
+        }
+    </div>
+</div>

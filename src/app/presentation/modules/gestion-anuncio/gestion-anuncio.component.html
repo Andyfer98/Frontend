@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="titulo">
+    <h1>Gestion de anuncios</h1>
+  </div>
+
+  <div class="imagen-next">
+    <a [routerLink]="['/form-articulo']">
+      <img id="siguiente" src="../../../../assets/image/proximo.png" alt="">
+    </a>    
+  </div>
+
+  <div class="imagen">
+    <img src="../../../../assets/image/logo-black.png" alt="">
+  </div>
+
+  <div class="container">
+    <!-- Formulario para agregar/actualizar anuncios -->
+    <form (ngSubmit)="onSubmit()" #anuncioForm="ngForm">
+      <div class="form-group">
+        <label for="titulo">Título</label>
+        <input
+          type="text"
+          class="form-control"
+          id="titulo"
+          required
+          [(ngModel)]="anuncio.titulo"
+          name="titulo"
+          #titulo="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <textarea
+          class="form-control"
+          id="descripcion"
+          required
+          [(ngModel)]="anuncio.descripcion"
+          name="descripcion"
+          #descripcion="ngModel"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Tipo de Anuncio</label>
+        <textarea
+          class="form-control"
+          id="anuncio"
+          required
+          [(ngModel)]="anuncio.tipoAnuncio"
+          name="anuncio"
+          #descripcion="ngModel"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn-agregar" [disabled]="!anuncioForm.form.valid">
+        {{ anuncio.id ? 'Actualizar' : 'Agregar' }}
+      </button>
+      <button type="button" class="btn-cancelar" (click)="resetForm()">
+        Cancelar
+      </button>
+    </form>
+  
+    <!-- Lista de anuncios -->
+    <div class="mt-4">
+      <mat-form-field>
+        <mat-label id="filtro">Filtro</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="buscar" #input>
+      </mat-form-field>
+      <table mat-table [dataSource]="dataSource" class="tabla-anuncios" >
+        <!-- Columna Titulo -->
+        <!-- Definición de la columna Título -->
+        <ng-container matColumnDef="titulo">
+          <th *matHeaderCellDef> Título Anuncio </th>
+          <td mat-cell *matCellDef="let anuncio"> {{ anuncio.titulo }} </td>
+        </ng-container>
+
+        <!-- Definición de la columna Descripción -->
+        <ng-container matColumnDef="descripcion">
+          <th  *matHeaderCellDef> Descripción </th>
+          <td mat-cell *matCellDef="let anuncio"> {{ anuncio.descripcion }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tipoAnuncio">
+          <th  *matHeaderCellDef> Tipo de Anuncio </th>
+          <td mat-cell *matCellDef="let anuncio"> {{ anuncio.tipoAnuncio }} </td>
+        </ng-container>
+
+        <!-- Definición de la columna Acciones -->
+        <ng-container matColumnDef="actions">
+          <th  *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let anuncio">
+            <div class="button-container">
+              <div class="container-button">
+                <button (click)="editAnuncio(anuncio)">
+                    <i class="bi bi-pen-fill"></i>
+                </button>
+            </div>
+              <div class="container-button">
+                <button class="botonEliminar" (click)="deleteAnuncio(anuncio.id)">
+                    <i class="bi bi-trash3-fill"></i>
+                </button>
+            </div>
+            </div>
+          </td>
+        </ng-container>
+        <!-- Encabezado de la tabla -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <!-- Fila de la tabla -->
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+

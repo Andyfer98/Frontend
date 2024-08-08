@@ -1,0 +1,21 @@
+<section class="p-5">
+    <div class="row row-cols-2 bg-custom-pink mx-auto">
+        <div class="col">
+            <div class=" text-center">
+                @if (voto) {
+                    <span class="text-count font-edogohe">{{voto.data.length}}</span>
+                }
+                <p class="text-subtitle font-lovika">Votos a favor</p>
+            </div>
+        </div>
+        <div class="col col-list p-4 overflow-hidden">
+            <div class="list">
+                @if (voto) {
+                    @for (item of voto.data; track voto; let index = $index) {
+                        <p> <strong>{{index+1}})</strong> {{item.estudiante?.nombres}} {{item.estudiante?.apellidos}}</p>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>

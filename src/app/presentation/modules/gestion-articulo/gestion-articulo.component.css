@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--purple-custom);
+}
+
+label {
+    font-weight: 500;
+}
+
+.container {
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    margin-left: 150px;
+    background-color: white;
+    height: 100%;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 180px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.btn-agregar {
+    margin-top: 15px;
+    margin-right: 5px;
+    font-size: 14px;
+    padding: 5px 60px;
+    background-color: rgba(0, 0, 0, 0.796);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #555; /* Fondo gris en hover */
+}
+
+.btn-editar {
+    margin-top: 15px;
+    margin-right: 5px;
+    font-size: 12px;
+    padding: 5px 30px;
+    background-color: rgba(0, 0, 0, 0.796);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+    background-color: #555; /* Fondo gris en hover */
+}
+
+.btn-cancelar {
+    font-size: 14px;
+    padding: 5px 60px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: red;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background-color: rgb(194, 13, 13);
+}
+
+.btn-eliminar {
+    font-size: 12px;
+    padding: 5px 20px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: red;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: rgb(194, 13, 13);
+}
+
+.tabla-anuncios {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#celda-acciones {
+    width: 300px;
+}
+
+.titulo-tabla {
+    font-size: 20px;
+}
+
+
+td, th {
+    padding: 12px 15px; /* Relleno en celdas */
+    text-align: left; /* Alineación del texto a la izquierda */
+    background-color: rgba(255, 255, 255, 0.875);
+  }
+
+  th {
+    font-weight: 500;
+    color: black; /* Color de texto del encabezado */
+    font-size: 12px;
+    background-color: var(--purple-custom); /* Fondo de encabezado */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo para filas pares */
+  }
+
+  tr:hover {
+    background-color: #ddd; /* Color de fondo en hover */
+  }
+
+  .filter-container {
+    margin-bottom: 16px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    height: 80px;
+  }
+  
+  input[matInput] {
+    padding-right: 24px; /* To make space for the clear button */
+  }
+  
+  .imagen {
+    width: 32px;
+    height: 32px;
+    margin-left: 20px;
+  }
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .imagen-back {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    top: 5%;
+  }
+
+  #atras {
+    height: 32px;
+    width: 32px;
+  }
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.container-button button {
+    border-radius: 12px;
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave para el hover */
+    background-color: var(--purple-custom);
+    padding: 4px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.container-button button:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del botón en hover (10% más grande) */
+    background-color: #ff69b4a7; /* Color de fondo en hover (rosado) */
+    border-color: #ff69b4; /* Color del borde en hover (rosado) */
+    color: white; /* Color del texto en hover */
+  }
+
+.container-button {
+    border-radius: 10px;
+}

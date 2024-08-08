@@ -1,0 +1,28 @@
+.card {
+    width: 20rem;
+    background-color: var(--pink-custom);
+}
+
+.image_container {
+    cursor: pointer;
+    width: 100%;
+    height: 20rem;    
+    border-radius: 0.5rem;
+}
+
+.image_container img {
+    object-position: top;
+}
+
+.card {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.687);;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.animated-text {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.text-effect {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.129), 0 0 10px rgba(255, 255, 255, 0.326);
+}

@@ -1,0 +1,47 @@
+<section class="h-100">
+    <div class="py-3 text-center text-lg-start h-100">
+        <div class="card border-0 rounded-0 shadow-none">
+            <div class="card-body p-5">
+                <span class="font-frenia display-6 mb-4 w-100">{{title}}</span>
+                
+                <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-3 mt-4">
+
+                    <div class="input-custom">
+                        <input type="text" class="input" placeholder="Nombre del premio" formControlName="nombre">
+                        <button class="buttom-custom" type="button">Nombre</button>
+                    </div>
+
+                    <div class="input-custom">
+                        <select class="input" formControlName="puesto">
+                            <option value="" hidden selected>Seleccionar Puesto</option>
+                            @for (item of _puestosService.puestos; track $index) {
+                                <option [value]=item.id>{{ item.value }}</option>
+                            }
+                        </select>
+                        <button class="buttom-custom" type="button">Puesto</button>
+                    </div>
+
+                    <div class="input-custom">
+                        <input type="text" class="input" placeholder="Descripcion" style="padding-right: 5.5rem; text-wrap: nowrap; text-overflow: ellipsis;" formControlName="descripcion">
+                        <button class="buttom-custom" type="button">Descripcion</button>
+                    </div>
+                    <div class="row row-cols-1 mt-1">
+                        <div>
+                            <button type="submit" class="btn w-100 btn-dark rounded-4">
+                                @if (loading()) {
+                                <div class="spinner-border spinner-border-sm">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                } @else {
+                                <span class="small">{{btnTitle}}</span>
+                                }
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>

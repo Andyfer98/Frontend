@@ -1,0 +1,18 @@
+<div class="card rounded-0 border-0 overflow-hidden bg-white">
+    <div class="bg-white p-4">
+        <div class="image d-flex mx-auto bg-success-subtle justify-content-center align-items-center rounded-circle">
+            <i class="bi bi-check fs-1 text-success"></i>
+        </div>
+        <div class="content mt-2 text-center">
+            <span class="title">Confirmar Votación</span>
+            <p class="message text-center">
+                ¿Estás seguro de que deseas votar por la candidata <strong>{{data.nombresCompletos}}</strong>? <br>
+                Recuerda que solo puedes votar por una candidata. Si deseas cambiar tu voto, deberás eliminar tu voto
+                anterior a través del área de administración.
+            </p>
+        </div>
+        <div class="mt-4">
+            <button class="desactivate bg-success py-1 small" type="button" (click)="onSubmit()">Votar</button>
+        </div>
+    </div>
+</div>

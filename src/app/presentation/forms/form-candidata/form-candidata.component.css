@@ -1,0 +1,15 @@
+input[type=file]::-webkit-file-upload-button {
+    background: white;
+    border: none;
+    color: rgba(0, 0, 0, 0.461);
+    border-right: 2px solid rgba(0, 0, 0, 0.461);
+}
+
+input[type="file"]{
+    font-size: .750rem;
+}
+
+.card {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.687);;
+    animation: fadeInUp 1s ease-in-out;
+}

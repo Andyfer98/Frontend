@@ -1,0 +1,69 @@
+<section class="w-100 d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="card border-0 rounded-0 w-50 mx-auto">
+            <div class="card-body py-5 px-md-5">
+                <span class="font-frenia fs-2 w-100">Editar Información</span>
+                <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-5 mt-4">
+                    <div class="row row-cols-2">
+                        <div class="container-input">
+                            <div class="input-custom">
+                                <input placeholder="Nombres completos" type="text" class="input" formControlName="nombres">
+                                <button class="buttom-custom" type="button">Nombres</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-custom">
+                                <input placeholder="Apellidos completos" type="text" class="input" formControlName="apellidos">
+                                <button class="buttom-custom" type="button">Apellidos</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-2">
+                        <div class="container-input">
+                            <div class="input-custom">
+                                <select class="input" formControlName="semestre">
+                                    <option value="" hidden selected>Seleccionar semestre</option>
+                                    @for (item of _semestreService.semestres; track $index) {
+                                        <option [value]="item.id">{{ item.value }}</option>
+                                    }
+                                </select>
+                                <button class="buttom-custom" type="button">Semestre</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-custom">
+                                <input placeholder="Correo Institucional" type="email" class="input" formControlName="correo">
+                                <button class="buttom-custom" type="button">Correo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-2">
+                        <div class="container-input">
+                            <div class="input-custom">
+                                <input placeholder="Usuario" type="text" class="input" formControlName="usuario">
+                                <button class="buttom-custom" type="button">Usuario</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-custom">
+                                <input placeholder="Contraseña" type="password" class="input" formControlName="contrasena">
+                                <button class="buttom-custom" type="button">Contraseña</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1">
+                        <button type="submit" class="btn w-100 btn-dark rounded-4">
+                            @if (loading()) {
+                                <div class="spinner-border spinner-border-sm">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            } @else {
+                                <span class="small">Editar</span>
+                            }
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,83 @@
+<section class="container-fluid bg-custom-purple">
+  <div class="row align-items-center justify-content-center vh-100">
+    <div class="col-md-8 p-5 p-md-0">
+      <div class="card border-0 rounded-0 overflow-hidden p-3 move-up">
+        <div class="row no-gutters">
+          <div class="col-md-6">
+            <img src="/assets/image/form-candidata/poster.png" class="h-100 card-img rounded-0 object-fit-cover"
+              alt="Collection 2018">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h3 class="card-title text-center font-frenia text-dark-emphasis">Tu Oportunidad de Brillar Comienza Aquí
+              </h3>
+              <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-3">
+                <div class="input-custom">
+                  <input placeholder="Nombres Completos" type="text" class="input" formControlName="nombres" formControlName="nombresCompletos">
+                  <button class="buttom-custom" type="button">Nombres</button>
+                </div>
+                <div class="input-custom">
+                  <input type="date" class="input" style="padding-right: 5.5rem;" formControlName="fechaNacimiento">
+                  <button class="buttom-custom" type="button">Nacimiento</button>
+                </div>
+                <div class="container-input">
+                  <div class="input-custom">
+                    <select class="input" formControlName="semestre">
+                      <option value="" hidden selected>Seleccionar semestre</option>
+                      @for (item of _semestreService.semestres; track $index) {
+                        <option [value]="item.id">{{ item.value }}</option>
+                      }
+                    </select>
+                    <button class="buttom-custom" type="button">Semestre</button>
+                  </div>
+                </div>
+                <div class="container-input">
+                  <div class="input-custom">
+                    <input placeholder="Usuario" type="text" class="input" formControlName="usuario">
+                    <button class="buttom-custom" type="button">Usuario</button>
+                  </div>
+                </div>
+                <div>
+                  <div class="input-custom">
+                    <input placeholder="Contraseña" type="password" class="input" formControlName="contrasena">
+                    <button class="buttom-custom" type="button">Contraseña</button>
+                  </div>
+                </div>
+                <div class="container-input">
+                  <div class="input-custom">
+                    <input placeholder="Propuesta" type="file" class="input" accept="image/*" (change)="onFileSelected($event)" formControlName="urlImagen">
+                    <button class="buttom-custom" type="button">Fotografía</button>
+                  </div>
+                </div>
+                <div class="container-input">
+                  <div class="input-custom">
+                    <input placeholder="Propuesta" type="text" class="input" formControlName="propuesta">
+                    <button class="buttom-custom" type="button">Propuesta</button>
+                  </div>
+                </div>
+                <div class="row row-cols-2">
+                  <div>
+                    <button type="button" class="btn w-100 btn btn-outline-danger rounded-4" routerLink="/home">
+                      <span class="small">Regresar</span>
+                    </button>
+                  </div>
+                  <div>
+                    <button type="submit" class="btn w-100 btn-dark rounded-4">
+                      @if (loading()) {
+                        <div class="spinner-border spinner-border-sm">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      } @else {
+                        <span class="small">Registrarse</span>
+                      }
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

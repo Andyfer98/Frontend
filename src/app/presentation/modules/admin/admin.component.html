@@ -1,0 +1,51 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="d-flex justify-content-center align-items-center h-25">
+      <div class="text-center">
+        <img src="/assets/image/logo-black.png" class="w-75" alt="logo">
+      </div>
+    </mat-toolbar>
+    <hr class="m-0">
+    <mat-nav-list class="sidenav-list">
+      <ul class="list-unstyled mt-3">
+        @for (item of routes; track $index) {
+          <li>
+            <a [routerLink]="item.path">
+              <span class="icon">
+                <i class="{{ item.data?.['icon'] }}"></i>
+              </span>
+              <span class="title">{{ item.data?.['label'] }}</span>
+            </a>
+          </li>
+        }
+        @if (_usuarioLogeado.rol == 'estudiante') {
+          <li>
+            <a routerLink="/principal">
+              <span class="icon">
+                <i class="bi bi-house-door-fill"></i>
+              </span>
+              <span class="title">Home</span>
+            </a>
+          </li>      
+        }
+      </ul>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      @if (isHandset$ | async) {
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      }
+      <div class="w-100 d-flex justify-content-between align-items-center">
+        <span>Bienvenido, {{_usuarioLogeado.nombres}}</span>
+        <button type="button" mat-icon-button (click)="cerrarSesion()">
+          <mat-icon>power_settings_new</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>

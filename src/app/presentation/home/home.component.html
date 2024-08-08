@@ -1,0 +1,138 @@
+<nav class="navbar bg-custom-purple row row-cols-3 m-0">
+    <a class="navbar-brand font-frenia col-2 user-select-none fs-3" routerLink="">QueenVote</a>
+    <ul class="navbar-nav gap-3 d-flex justify-content-around flex-row font-lovika small">
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/login', 'Estudiante']">Estudiante</a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/login', 'Candidata']">Candidata</a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/login', 'Patrocinador']">Patrocinador</a></li>
+        
+    </ul>
+    <div class="col-2"></div>
+</nav>
+
+<section class="section-hero bg-custom-purple text-center">
+    <div class="container w-50">
+        <span class="display-3 font-frenia">La mejor manera de votar por tu Reina</span>
+        <p>Empoderando e Inspirando a las Jóvenes. Emite tu voto y haz que tu elección cuente.</p>
+        <div class="d-flex flex-column flex-md-row justify-content-center gap-3 my-4">
+            <a [routerLink]="['/login', 'Estudiante']" class="btn btn-dark btn-custom px-4">Votar Ahora</a>
+            <a routerLink="/form-estudiante" class="btn btn-light btn-custom px-4">Registrarse</a>
+        </div>
+    </div>
+</section>
+
+<section class="info-section text-center mb-5">
+    <div class="container">
+        <div class="row d-flex justify-content-evenly">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card mx-auto shadow">
+                    <img src="/assets/image/home/1.png" class="card-img-top" alt="Person 1">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card mx-auto shadow">
+                    <img src="/assets/image/home/3.png" class="card-img-top" alt="Person 3">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card mx-auto shadow">
+                    <img src="/assets/image/home/2.png" class="card-img-top" alt="Person 2">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-body my-5">
+    <div class="container">
+        <div class="row container-section">
+            <div class="col-md-6 mb-4 ps-5">
+                <span class="display-1 font-frenia">Estudiante</span>
+                <p>Como estudiante, tienes el poder de influir en el futuro. Vota por tu candidata favorita y haz que tu
+                    voz sea escuchada. Tu participación es fundamental para un cambio positivo.</p>
+                <div class="d-flex flex-column flex-md-row justify-content-start gap-3 my-4">
+                    <a [routerLink]="['/login', 'Estudiante']" class="btn btn-sm btn-dark btn-custom px-4">Iniciar Sesión</a>
+                    <a routerLink="/form-estudiante" class="btn btn-sm btn-light btn-custom px-4">Registrarse</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 container-image">
+                <div class="card mx-auto shadow">
+                    <img src="/assets/image/home/4.png" class="card-img-top" alt="Person 2">
+                </div>
+            </div>
+        </div>
+        <div class="row container-section">
+            <div class="col-md-6 mb-4 container-image">
+                <div class="card mx-auto shadow">
+                    <img src="/assets/image/home/5.png" class="card-img-top" alt="Person 2">
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 ps-5">
+                <span class="display-1 font-frenia">Patrocinador</span>
+                <p>Apoya a las jóvenes promesas y potencia su crecimiento. Tu patrocinio puede marcar la diferencia en
+                    su camino hacia el éxito. Con tu ayuda, ellas pueden alcanzar nuevas alturas.</p>
+                <div class="d-flex flex-column flex-md-row justify-content-start gap-3 my-4">
+                    <a [routerLink]="['/login', 'Patrocinador']" class="btn btn-sm btn-dark btn-custom px-4">Iniciar Sesión</a>
+                    <a routerLink="/form-patrocinador" class="btn btn-sm btn-light btn-custom px-4">Registrarse</a>
+                </div>
+            </div>
+        </div>
+        <div class="row container-section">
+            <div class="col-md-6 mb-4 ps-5">
+                <span class="display-1 font-frenia">Candidata</span>
+                <p>Inspira a otros con tu liderazgo y carisma. Participa en la elección y demuestra tu potencial como
+                    futura reina. Tu esfuerzo y dedicación son la clave para lograr grandes cosas.</p>
+                <div class="d-flex flex-column flex-md-row justify-content-start gap-3 my-4">
+                    <a [routerLink]="['/login', 'Candidata']" class="btn btn-sm btn-dark btn-custom px-4">Iniciar Sesión</a>
+                    <a routerLink="/form-candidata" class="btn btn-sm btn-light btn-custom px-4">Registrarse</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 container-image">
+                <div class="card mx-auto shadow">
+                    <img src="/assets/image/home/6.png" class="card-img-top" alt="Person 2">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="h-auto m-0">
+
+<section class="subscribe-section">
+    <div class="container px-5">
+        <h2 class="mb-4 font-frenia display-4">Suscríbete a nuestro boletín</h2>
+        <p class="mb-4 px-5 fs-5">
+            Mantente al día con las últimas noticias y actualizaciones del concurso de Reina de Belleza. Recibe
+            información exclusiva sobre las candidatas, eventos próximos y resultados directamente en tu correo
+            electrónico.
+        </p>
+        <form class="form-inline justify-content-center px-5">
+            <div class="input-container position-relative d-flex w-100 bg-white rounded-3">
+                <input placeholder="Email Address" type="email" class="w-100 h-100 rounded-3 bg-transparent">
+                <button class="invite-btn position-absolute rounded-3 text-white text-uppercase border-0"
+                    type="button">Suscríbirse</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer class="text-center text-black" style="background-color: #d4b9e0;">
+    <div class="container p-4 pb-0">
+        <section class="d-flex justify-content-center justify-content-lg-between py-4 pt-0">
+            <div class="me-5 d-none d-lg-block">
+                <span>Conéctate con nosotros en las redes sociales: </span>
+            </div>
+            <div>
+                <a href="" class="me-4 text-reset"><i class="bi bi-facebook"></i></a>
+                <a href="" class="me-4 text-reset"><i class="bi bi-twitter-x"></i></a>
+                <a href="" class="me-4 text-reset"><i class="bi bi-youtube"></i></a>
+                <a href="" class="me-4 text-reset"><i class="bi bi-instagram"></i></a>
+                <a href="" class="me-4 text-reset"><i class="bi bi-browser-chrome"></i></a> <br>
+            </div>
+        </section>
+    </div>
+    <div class="text-center p-3 small" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Copyright: Facultad de Ciencias Matemáticas y Físicas
+    </div>
+    
+
+</footer>

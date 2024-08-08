@@ -1,0 +1,159 @@
+html,
+body {
+  height: 100%;
+}
+
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pink-custom) white;
+}
+
+/* 
+  ___ ___  _    ___  ___ ___ 
+ / __/ _ \| |  / _ \| _ / __|
+| (_| (_) | |_| (_) |   \__ \ 
+ \___\___/|____\___/|_|_|___/ */
+
+
+:root {
+  --white-custom: #FFFFFF;
+  --black-custom: #090909;
+  --purple-custom: #F5E2FE;
+  --pink-custom: #FFB9B7;
+}
+
+.bg-custom-pink {
+  background-color: var(--pink-custom);
+}
+
+.text-custom-pink {
+  color: #F1889A;
+}
+
+.bg-custom-purple {
+  background-color: var(--purple-custom);
+}
+
+.text-custom-purple {
+  color: var(--purple-custom);
+}
+
+
+/* 
+___ ___  _  _ _____ 
+| __/ _ \| \| |_   _|
+| _| (_) | .` | | |  
+|_| \___/|_|\_| |_| */
+
+
+@font-face {
+  font-family: 'frenia';
+  src: url('./assets/fonts/frenia.otf');
+}
+
+.font-frenia {
+  font-family: 'frenia', sans-serif;
+}
+
+@font-face {
+  font-family: 'edogohe';
+  src: url('./assets/fonts/edogohe.otf');
+}
+
+.font-edogohe {
+  font-family: 'edogohe', sans-serif;
+}
+
+@font-face {
+  font-family: 'lovika';
+  src: url('./assets/fonts/lovika.otf');
+}
+
+.font-lovika {
+  font-family: 'lovika', sans-serif;
+}
+
+
+/*  
+ ___ _   _ _____ _____ ___  _  _ 
+| _ | | | |_   _|_   _/ _ \| \| |
+| _ | |_| | | |   | || (_) | .` |
+|___/\___/  |_|   |_| \___/|_|\_| */
+
+.btn {
+  border-radius: 80px !important;
+}
+
+/* 
+ ___ _  _ ___ _   _ _____ 
+|_ _| \| | _ | | | |_   _|
+ | || .` |  _| |_| | | |  
+|___|_|\_|_|  \___/  |_|  */
+
+.input-custom {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 2.8rem;
+  min-width: 200px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, .03);
+}
+
+.input-custom .input {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: transparent;
+  border: 1px solid rgb(176 190 197);
+  padding: 0.625rem 70px 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(69 90 100);
+  outline: none;
+  appearance: none;
+}
+
+.input-custom .input:focus {
+  border: 1px solid #F1889A;
+}
+
+.buttom-custom {
+  position: absolute;
+  width: 75px;
+  right: 1%;
+  top: 4px;
+  bottom: 4px;
+  z-index: 100;
+  padding-top: .25rem 0.5rem;
+  border-radius: 20px;
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: var(--black-custom);
+  opacity: 0.8;
+}
+
+
+/* 
+  ___ _____ ___  ___  ___ 
+ / _ |_   _| _ \/ _ \/ __|
+| (_) || | |   | (_) \__ \
+ \___/ |_| |_|_\\___/|___/ */
+
+ 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

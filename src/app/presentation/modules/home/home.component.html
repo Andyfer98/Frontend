@@ -1,0 +1,147 @@
+<nav class="navbar bg-custom-purple row row-cols-3 m-0 ">
+    <p class="navbar-brand font-frenia col-2 user-select-none fs-3">QueenVote</p>
+    <p class="navbar-brand font-frenia col-2 user-select-none fs-5 w-auto text-end">
+        <span>Bienvenido, {{usuarioLogeado.nombres}}</span>
+        <i class="bi bi-gear-fill ms-3 small" style="cursor: pointer;" routerLink="/admin"></i>
+    </p>
+</nav>
+
+<section class="section-hero bg-custom-purple text-center">
+    <div class="container w-100 d-flex flex-column justify-content-center">
+        <span class="display-3 font-frenia px-5">Conoce a nuestros Patrocinadores</span>
+        <p>Su Apoyo Hace Posible Este Evento. <br> Agradecemos Profundamente Su Contribución y Confianza.</p>
+        <div class="my-4 mt-5 container-list-patrocinador">
+            @for (item of patrocinadores; track $index) {
+            <div class="container-patrocinador">
+                <a [href]="item.website" target="_blank">
+                    <img [src]="item.urlLogo" [alt]="'image-'+item.empresa">
+                </a>
+            </div>
+            } @empty {
+                <mat-progress-bar mode="indeterminate" color="warn"></mat-progress-bar>
+            }
+        </div>
+    </div>
+</section>
+
+<hr class="h-auto m-0">
+
+<section class="subscribe-section">
+    <div class="container px-5">
+        <h2 class="mb-4 font-frenia display-4">Vota Responsablemente</h2>
+        <p class="mb-4 px-5 fs-5">
+            Participa de manera consciente: respeta las opiniones y evita comentarios ofensivos. Tu voto es valioso, así
+            que elige con criterio y consideración. Agradecemos tu compromiso en hacer de este evento una experiencia
+            positiva para todos.
+        </p>
+    </div>
+</section>
+
+<hr class="h-auto m-0">
+
+<section class="subscribe-section bg-custom-purple">
+    <div class="container px-5">
+        <h2 class="mb-4 font-frenia display-4">Lista de Candidatas</h2>
+        <div class="d-flex justify-content-center align-items-center w-100 flex-wrap gap-3">
+            @for (item of candidatas; track $index) {
+            <div class="container-imagen">
+                <main class="d-flex flex-column justify-content-center align-items-center p-3">
+                    <div class="card overflow-hiddens position-relative rounded-3 overflow-hidden">
+                        <img [src]="item.urlImagen" class="position-absolute object-fit-cover w-100 h-100 top-0" alt="">
+                        <div class="card-content bg-white">
+                            <span
+                                class="position-absolute m-0 text-capitalize font-edogohe text-dark text-start pe-3">{{
+                                item.nombresCompletos }}</span>
+                            <p class="position-absolute">{{ item.propuesta }}</p>
+                        </div>
+                    </div>
+                    <div class="container-actions mt-1">
+                        <button class="rounded-start-3" (click)="openComentario(item)">Comentar</button>
+                        <button class="rounded-end-3" (click)="openVotar(item)">Votar</button>
+                    </div>
+                </main>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<hr class="h-auto m-0">
+
+<section class="subscribe-section">
+    <div class="container px-5">
+        <h2 class="mb-4 font-frenia display-4">Premios para las Ganadoras</h2>
+        <div class="cards d-flex flex-column flex-md-row justify-content-center gap-5">
+            <div class="card-premio second">
+                <p class="tip">Segundo Puesto</p>
+                <ul class="d-flex flex-column px-1 overflow-hidden">
+                    <div class="h-100 overflow-y-auto d-flex flex-column gap-2">
+                        @for (item of premios; track $index) {
+                        @if (item.puesto == 'Segundo') {
+                        <li class="d-flex">
+                            <i class="bi bi-check-circle-fill text-dark-emphasis small"></i>
+                            <span class="text-dark-emphasis list_text text-start ps-2 ">{{ item.nombre }}, {{
+                                item.descripcion }}</span>
+                        </li>
+                        }
+                        }
+                    </div>
+                </ul>
+            </div>
+            <div class="card-premio first">
+                <p class="tip">Primer Puesto</p>
+                <ul class="d-flex flex-column px-1 overflow-hidden">
+                    <div class="h-100 overflow-y-auto d-flex flex-column gap-2">
+                        @for (item of premios; track $index) {
+                        @if (item.puesto == 'Primero') {
+                        <li class="d-flex">
+                            <i class="bi bi-check-circle-fill text-dark-emphasis small"></i>
+                            <span class="text-dark-emphasis list_text text-start ps-2 ">{{ item.nombre }}, {{
+                                item.descripcion }}</span>
+                        </li>
+                        }
+                        }
+                    </div>
+                </ul>
+            </div>
+            <div class="card-premio third">
+                <p class="tip">Tercer Puesto</p>
+                <ul class="d-flex flex-column px-1 overflow-hidden">
+                    <div class="h-100 overflow-y-auto d-flex flex-column gap-2">
+                        @for (item of premios; track $index) {
+                        @if (item.puesto == 'Tercero') {
+                        <li class="d-flex">
+                            <i class="bi bi-check-circle-fill text-dark-emphasis small"></i>
+                            <span class="text-dark-emphasis list_text text-start ps-2 ">{{ item.nombre }}, {{
+                                item.descripcion }}</span>
+                        </li>
+                        }
+                        }
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="h-auto m-0">
+
+<footer class="text-center text-black" style="background-color: #d4b9e0;">
+    <div class="container p-4 pb-0">
+        <section class="d-flex justify-content-center justify-content-lg-between py-4 pt-0">
+            <div class="me-5 d-none d-lg-block">
+                <span>Conéctate con nosotros en las redes sociales: </span>
+            </div>
+            <div>
+                <a href="" class="me-4 text-reset"><i class="bi bi-facebook"></i></a>
+                <a href="" class="me-4 text-reset"><i class="bi bi-twitter-x"></i></a>
+                <a href="" class="me-4 text-reset"><i class="bi bi-youtube"></i></a>
+                <a href="" class="me-4 text-reset"><i class="bi bi-instagram"></i></a>
+                <a href="" class="me-4 text-reset"><i class="bi bi-browser-chrome"></i></a>
+            </div>
+        </section>
+    </div>
+    <div class="text-center p-3 small" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Copyright: Facultad de Ciencias Matemáticas y Físicas
+    </div>
+</footer>

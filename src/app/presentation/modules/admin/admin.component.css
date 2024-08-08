@@ -1,0 +1,66 @@
+.sidenav-container {
+  height: 100%;
+  background-color: white;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: var(--purple-custom);
+  border: none;
+}
+
+ul {
+  padding: 0 10px;
+  width: 100%;
+  color: var(--black-custom);
+}
+
+ul li {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin-bottom: 1rem;
+  border: 1px solid #33333315;
+  border-right: none;
+  box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.687);
+  transition: box-shadow .3s ease-in-out;
+}
+
+ul li a {
+  text-decoration: none;
+  padding: 20px;
+  padding-left: .8rem;
+  cursor: pointer;
+}
+
+ul li a .icon i {
+  width: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+ul li a .title {
+  padding-left: 15px;
+  line-height: 60px;
+  font-size: 1.1rem;
+  color: #333333e2;
+  font-family: 'lovika', sans-serif;
+}
+
+ul li:hover {
+  box-shadow: -1.5px 1.5px 1.5px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.687);
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  background-color: var(--purple-custom);
+  top: 0;
+  z-index: 1;
+  font-family: 'lovika', sans-serif;
+  color: #333333e2;
+}

@@ -1,0 +1,23 @@
+<section class="w-100 d-flex justify-content-center align-items-center pt-5">
+    <div class="card d-flex flex-column gap-2 p-3 border-0 shadow-sm">
+        @if (comentarios) {
+            @for (item of comentarios.data; track $index) {
+                <div class="container-messages">
+                    <div class="chat-window p-3 pt-0 flex-grow-1">
+                        <div class="message-box rounded-3 shadow-sm p-1 left">
+                            <p>{{item.estudiante?.nombres}} {{item.estudiante?.apellidos}}</p>
+                            <hr class="m-0 text-dark-emphasis h-auto">
+                            <div class="container-text">
+                                <p>{{item.comentario}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            } @empty {
+                <div class="pt-5 pb-4 px-4 bg-custom-pink rounded-2 text-center">
+                    <span class="display-1 font-frenia text-black">Aún no recibes ningún comentario</span>
+                </div>
+            }
+        }
+    </div>
+</section>

@@ -1,0 +1,65 @@
+.card {
+    width: 90%;
+    height: 475px;
+    overflow: hidden;   
+    overflow-y: auto; 
+    background-color: var(--pink-custom);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.container-messages {
+    display: grid;
+    grid-template-columns: auto 1fr auto;    
+}
+.container-image{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.message-box.left {
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 13px;
+    left: 0;
+    width: 100%;
+    position: relative;
+}
+
+.message-box p {
+    font-size: .650rem;
+    font-weight: 600;
+    margin: .4rem;
+    text-transform: capitalize;
+}
+
+.message-box .container-text p {
+    font-weight: normal;
+    font-size: .800rem;
+}
+
+.message-box.left::before {
+    content: '';
+    position: absolute;
+    left: -10px; 
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f1f1f1 transparent transparent;
+}
+
+.animated-text {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.text-effect {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.129), 0 0 10px rgba(255, 255, 255, 0.326);
+}

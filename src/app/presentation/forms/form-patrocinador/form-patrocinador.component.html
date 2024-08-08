@@ -1,0 +1,82 @@
+<section class="bg-custom-purple h-100">
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start h-100">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 animated-text">
+                    <h1 class="my-5 mb-4 display-3 font-frenia text-effect">
+                        Tu Oportunidad de Patrocinio <br />
+                        <span class="display-5 text-custom-pink">para apoyar a los mejores talentos</span>
+                    </h1>
+                    <p>
+                        Únete a nosotros como patrocinador y ayuda a impulsar el éxito de los candidatos más
+                        prometedores. Aprovecha esta
+                        oportunidad para asociarte con talento emergente y formar parte de una comunidad de apoyo y
+                        crecimiento. Tu
+                        contribución hará una diferencia significativa en sus trayectorias profesionales.
+                    </p>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card border-0 rounded-0">
+                        <div class="card-body py-5 px-md-5">
+                            <span class="font-frenia display-6 w-100">Información Requerida</span>
+                            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-3 mt-4">
+                                <div class="input-custom">
+                                    <input type="text" class="input" placeholder="Nombre de la empresa" formControlName="empresa">
+                                    <button class="buttom-custom" type="button">Empresa</button>
+                                </div>
+
+                                <div class="input-custom">
+                                    <input type="text" class="input" placeholder="Sitio web de la empresa" formControlName="website">
+                                    <button class="buttom-custom" type="button">Website</button>
+                                </div>
+
+                                <div class="container-input">
+                                    <div class="input-custom">
+                                        <input placeholder="Propuesta" type="file" class="input" accept="image/*"
+                                            (change)="onFileSelected($event)" formControlName="urlLogo">
+                                        <button class="buttom-custom" type="button">Logo</button>
+                                    </div>
+                                </div>
+
+                                <div class="container-input">
+                                    <div class="input-custom">
+                                        <input placeholder="Usuario" type="text" class="input"
+                                            formControlName="usuario">
+                                        <button class="buttom-custom" type="button">Usuario</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="input-custom">
+                                        <input placeholder="Contraseña" type="password" class="input"
+                                            formControlName="contrasena">
+                                        <button class="buttom-custom" type="button">Contraseña</button>
+                                    </div>
+                                </div>
+                                <div class="row row-cols-2">
+                                    <div>
+                                        <button type="button" class="btn w-100 btn btn-outline-danger rounded-4"
+                                            routerLink="/home">
+                                            <span class="small">Regresar</span>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn w-100 btn-dark rounded-4">
+                                            @if (loading()) {
+                                                <div class="spinner-border spinner-border-sm">
+                                                    <span class="visually-hidden">Loading...</span>
+                                                </div>
+                                            } @else {
+                                                <span class="small">Registrarse</span>
+                                            }
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

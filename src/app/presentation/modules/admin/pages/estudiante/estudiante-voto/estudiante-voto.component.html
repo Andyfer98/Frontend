@@ -1,0 +1,24 @@
+<section class="w-100 d-flex justify-content-center align-items-center pt-5">
+    @if (voto && voto.status == 200) {
+        <div class="card d-flex flex-column gap-2 p-3 border-0 shadow-sm">
+            <div class="image_container overflow-hidden position-relative">
+                <img [src]="voto.data.candidata?.urlImagen"
+                    class="shadow position-absolute object-fit-cover w-100" alt="image">
+            </div>
+            <div class="title w-100 font-frenia text-dark text-capitalize fs-3">
+                <span class="text-effect">{{voto.data.candidata?.nombresCompletos}}</span>
+            </div>
+            <div class="action">
+                <button class="btn btn-sm btn-dark small px-4 py-1 float-end" (click)="onSubmit()">Cancelar Voto</button>
+            </div>
+        </div>
+    } @else if(voto && voto.status == 404){
+        <div class="pt-5 pb-4 px-4 bg-custom-pink rounded-2 shadow-sm text-center">
+            <span class="display-6 font-frenia text-black">Aún no ejerces tu voto</span>
+            <button class="btn btn-sm btn-dark px-3 d-block mx-auto mt-3" routerLink="/principal">
+                <span>Ir a votar</span>
+                <i class="bi bi-house ps-2"></i>
+            </button>
+        </div>
+    }
+</section>

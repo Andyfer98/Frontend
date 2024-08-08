@@ -1,0 +1,34 @@
+<section class="w-100 d-flex justify-content-center align-items-center pt-5">
+    <div class="card d-flex flex-column gap-2 p-3 border-0 shadow-sm">
+        @for (item of comentarios.data; track $index) {
+            <div class="container-messages">
+                <div class="container-image">
+                    <img [src]="item.candidata?.urlImagen" class="shadow object-fit-cover "
+                    alt="image">
+                </div>
+                <div class="chat-window p-3 pt-0 flex-grow-1">
+                    <div class="message-box rounded-3 shadow-sm p-1 left">
+                        <p>{{item.candidata!.nombresCompletos}}</p>
+                        <hr class="m-0 text-dark-emphasis h-auto">
+                        <div class="container-text">
+                            <p>{{item.comentario}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="action">
+                    <button class="btn btn-sm btn-danger small" (click)="onSubmit(item.id!)">
+                        <i class="bi bi-trash-fill"></i>
+                    </button>
+                </div>
+            </div>
+        } @empty {
+            <div class="pt-5 pb-4 px-4 bg-custom-pink rounded-2 text-center">
+                <span class="display-1 font-frenia text-black">Aún no escribes ningún comentario</span>
+                <button class="btn btn-sm btn-dark px-3 d-block mx-auto mt-3" routerLink="/principal">
+                    <span>Ir a comentar</span>
+                    <i class="bi bi-chat-dots-fill ps-2"></i>
+                </button>
+            </div>
+        }
+    </div>
+</section>

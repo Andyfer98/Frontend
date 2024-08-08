@@ -1,0 +1,26 @@
+.text-count {
+    font-size: 15rem;
+}
+
+.text-subtitle {
+    font-size: 1.5rem;
+    position: relative;
+    top: -5rem;
+}
+
+.col-list {
+    border-left: 1px solid white;
+    position: relative;
+}
+
+.col-list .list {
+    position: absolute;
+    width: 90%;
+    overflow-y: auto;
+    max-height: 90%;
+}
+
+.col-list .list p {
+    font-size: small;
+    text-transform: capitalize;
+}

@@ -1,0 +1,29 @@
+<div class="container">
+    <header>
+        <div class="bg-custom-pink font-frenia text-black fs-4 py-1 px-3">Comentarios</div>
+        <button class="btn-close position-absolute" (click)="close()"></button>
+    </header>
+    <main #container>
+        <div class="chat-window p-3">
+            @for (item of comentarios; track $index) {
+                <div class="message-box mb-3 rounded-3 shadow-sm p-1 left">
+                    <p>{{item.estudiante!.nombres}} {{item.estudiante!.apellidos}}</p>
+                    <hr class="m-0 text-dark-emphasis h-auto">
+                    <div class="container-text">
+                        <p>{{item.comentario}}</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </main>
+    <footer>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-100">
+            <div class="chat-input d-flex align-items-center p-2">
+                <input type="text" class="message-input flex-grow-1 border-0 p-1 small"
+                    placeholder="Escribe tu comentario.." formControlName="comentario">
+                <button type="submit"
+                    class="send-button px-2 py-1 border-0 bg-custom-pink text-dark fw-medium small rounded-bottom-1 rounded-start-0">Comentar</button>
+            </div>
+        </form>
+    </footer>
+</div>
